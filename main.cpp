@@ -56,7 +56,11 @@ void mass(std::string input_filename){
                                [](int x){return x < 0;}) << std::endl;
 }
 
-int main() {
-    mass("input.txt");
+int main(int argc, char **argv) {
+    if(argc != 2){
+        std::cout << "Incorrect count of arguments" << std::endl;
+        return -1;
+    }
+    mass(argv[1]);
     return 0;
 }
